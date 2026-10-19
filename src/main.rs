@@ -9,14 +9,15 @@ use core::panic::PanicInfo;
 // Entry point
 pub extern "C" fn _start() -> ! {
     use core::fmt::Write;
-    vga_buffer::WRITER.lock().write_str("Hello World! \n").unwrap();
-    writeln!(vga_buffer::WRITER.lock(), "Some random numbers: {} {}", 42, 1.338).unwrap();
-
+    println!("Hello World! \n");
+    println!("Some random numbers: {} {}", 42, 1.338);
+    panic!("Some text");
     loop {}
 }
 
 /// This function is called on panic.
 #[panic_handler]
-fn panic(_info: &PanicInfo) -> ! {
+fn panic(info: &PanicInfo) -> ! {
+    println!("{}", info);
     loop {}
 }
