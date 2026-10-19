@@ -1,5 +1,5 @@
 [package]
-name = "my-os"
+name = "riven-os"
 version = "0.1.0"
 authors = ["Rico Viviers <ricoleonardv@gmail.com>"]
 edition = "2024"
@@ -14,6 +14,6 @@ panic = "abort"
 panic = "abort"
 
 [[bin]]
-name = "my-os"
+name = "riven-os"
 test = false
 bench = false

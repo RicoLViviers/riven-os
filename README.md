@@ -1,1 +1,1 @@
-# my-os
+# riven-os
