@@ -4,6 +4,9 @@ version = "0.1.0"
 authors = ["Rico Viviers <ricoleonardv@gmail.com>"]
 edition = "2024"
 
+[package.metadata.bootimage]
+test-args = ["-device", "isa-debug-exit,iobase=0xf4,iosize=0x04"]
+
 [dependencies]
 bootloader = "0.9.0"
 volatile = "0.2.6"
