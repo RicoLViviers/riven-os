@@ -125,17 +125,3 @@ lazy_static! {
         buffer: unsafe { &mut *(0xb8000 as *mut Buffer) },
     });
 }
-
-pub fn print_something() {
-    use core::fmt::Write;
-    let mut writer = Writer {
-        column_position: 0,
-        color_code: ColorCode::new(Color::Yellow, Color::Red),
-        buffer: unsafe {
-            &mut *(0xb8000 as *mut Buffer)
-        },
-    };
-
-    writeln!(writer, "Hello ").unwrap();
-    writeln!(writer, "The numbers are {} and {}", 42, 1.0/3.0).unwrap();
-}
