@@ -5,6 +5,7 @@ authors = ["Rico Viviers <ricoleonardv@gmail.com>"]
 edition = "2024"
 
 [dependencies]
+bootloader = "0.11.17"
 
 [profile.dev]
 panic = "abort"
