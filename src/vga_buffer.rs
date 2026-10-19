@@ -94,7 +94,26 @@ impl Writer {
         }
     }
 
-    fn new_line(&mut self) {/* TODO */}
+    fn new_line(&mut self) {
+        for row in 1..BUFFER_HEIGHT {
+            for col in 0..BUFFER_WIDTH {
+                let character = self.buffer.chars[row][col].read();
+                self.buffer.chars[row-1][col].write(character);
+            }
+        }
+        self.clear_row(BUFFER_HEIGHT - 1);
+        self.column_position = 0;
+    }
+
+    fn clear_row(&mut self, row: usize) {
+        let blank = ScreenChar {
+            ascii_character: b' ',
+            color_code: self.color_code,
+        };
+        for col in 0..BUFFER_WIDTH {
+            self.buffer.chars[row][col].write(blank);
+        }
+    }
 }
 
 pub fn print_something() {
@@ -107,7 +126,6 @@ pub fn print_something() {
         },
     };
 
-    writer.write_byte(b'H');
-    writer.write_string("ello ");
-    write!(writer, "The numbers are {} and {}", 42, 1.0/3.0).unwrap();
+    writeln!(writer, "Hello ").unwrap();
+    writeln!(writer, "The numbers are {} and {}", 42, 1.0/3.0).unwrap();
 }
