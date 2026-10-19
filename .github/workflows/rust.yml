@@ -16,7 +16,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Install nightly
+      run: |
+        rustup toolchain install nightly --component rust-src
+        rustup default nightly
     - name: Build
       run: cargo +nightly build --verbose
-    - name: Run tests
+    - name: Run tests 
       run: cargo +nightly test --verbose
