@@ -8,10 +8,8 @@ use core::panic::PanicInfo;
 #[unsafe(no_mangle)]
 // Entry point
 pub extern "C" fn _start() -> ! {
-    use core::fmt::Write;
     println!("Hello World! \n");
     println!("Some random numbers: {} {}", 42, 1.338);
-    panic!("Some text");
     loop {}
 }
 
