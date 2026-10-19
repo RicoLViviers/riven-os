@@ -41,6 +41,16 @@ cargo +nightly bootimage
 
 The generated bootable image is placed in the `target` directory.
 
+### Run
+
+Make sure you have `QEMU` installed.
+
+```bash
+cargo +nightly run
+```
+
+This will open a window running the operating system.
+
 ## Goals
 
 - Understand the boot process and kernel initialization
