@@ -22,7 +22,6 @@ The project is an ongoing exploration of kernel development, memory management, 
 ### Prerequisites
 
 - Rust nightly toolchain
-- `rust-src` component
 - `bootimage` utility
 - QEMU for emulation
 
