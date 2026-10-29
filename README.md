@@ -2,7 +2,7 @@
 
 A bare-metal operating system written in Rust.
 
-Riven OS is a personal systems programming project exploring operating system development, kernel architecture, and low-level hardware interaction from the ground up.
+Riven OS is a personal systems programming project exploring operating system development, kernel architecture, and low-level hardware interaction.
 
 ## About
 
